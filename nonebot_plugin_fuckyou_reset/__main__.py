@@ -17,7 +17,7 @@ TRIGGER_WORDS: Set[str] = DEFAULT_TRIGGER_WORDS | config.fuckyou_extend_words
 # 温柔词库
 GENTLE: List[str] = list(DEFAULT_GENTLE | config.fuckyou_extend_gentle)
 # 暴力词库
-VIOLENT: List[str] = list(DEFAULT_GENTLE | config.fuckyou_extend_gentle)
+VIOLENT: List[str] = list(DEFAULT_VIOLENT | config.fuckyou_extend_gentle)
 
 # 获取温柔词库
 def get_gentle_phase() -> str:
@@ -57,7 +57,7 @@ async def _(event: GroupMessageEvent, msg: Message = EventMessage()):
     if (str(event.group_id) not in config.fuckyou_violent_group):
         await fuck_this_people(fuck_other, find_user_id(msg))
     else:
-        await fuck_this_people(fuck_other, find_user_id(msg), is_violent = True)
+        await fuck_this_people(fuck_other, find_user_id(msg), True)
 
 # 温柔的骂别人（基于温柔词库
 fuck_gentle_other = on_command('温柔的骂', block=config.fuckyou_block)
@@ -69,7 +69,7 @@ async def _(event: GroupMessageEvent, msg: Message = EventMessage()):
 fuck_violent_other = on_command('狠狠的骂', block=config.fuckyou_block)
 @fuck_violent_other.handle()
 async def _(event: GroupMessageEvent, msg: Message = EventMessage()):
-    await fuck_this_people(fuck_violent_other, find_user_id(msg), is_violent = True)
+    await fuck_this_people(fuck_violent_other, find_user_id(msg), True)
 
 # 往死了骂别人（基于暴力词库, 按配置骂N条
 fuck_crazy_other = on_command('往死了骂', block=config.fuckyou_block)
@@ -78,7 +78,7 @@ async def _(event: GroupMessageEvent, msg: Message = EventMessage()):
     users = find_user_id(msg)
     if(users):
         for count in range(config.fuckyou_crazy_count):
-            await fuck_this_people(fuck_violent_other, users, is_violent = True, is_finish = False)
+            await fuck_this_people(fuck_violent_other, users, True, False)
     await fuck_crazy_other.finish()
 
 # 自动回骂触发规则

@@ -13,7 +13,7 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [project.urls]
-homepage = "https://github.com/lgc2333/nonebot-plugin-fuckyou"
+homepage = "https://github.com/Dogend233/nonebot-plugin-fuckyou-reset"
 
 [project.optional-dependencies]
 dev = [

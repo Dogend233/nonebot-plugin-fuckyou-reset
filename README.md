@@ -22,17 +22,17 @@ NoneBot2 骂人插件
 
 在 nonebot2 项目的 `.env` 文件中添加如下配置（非必须  
 
-`#fuckyou  
-fuckyou_group = [] # 全局回的群  
-fuckyou_tome_group = [] # 艾特机器人才回的群  
-fuckyou_violent_group = [] # 开启暴力词库的群(其他默认温柔词库  
-fuckyou_crazy_count = 5 # 往死了骂的条数  
-fuckyou_extend_words = [] # 额外触发词  
-fuckyou_extend_gentle = [] # 额外温柔词库  
-fuckyou_extend_violent = [] # 额外暴力词库  
-fuckyou_blacklist = [] # 黑名单(忽略这些用户  
-fuckyou_bl_to_wl = false # 黑名单反转白名单(仅对这些用户生效  
-fuckyou_block = false # 是否阻断 Matcher`  
+    #fuckyou  
+    fuckyou_group = [] # 全局回的群
+    fuckyou_tome_group = [] # 艾特机器人才回的群
+    fuckyou_violent_group = [] # 开启暴力词库的群(其他默认温柔词库
+    fuckyou_crazy_count = 5 # 往死了骂的条数
+    fuckyou_extend_words = [] # 额外触发词
+    fuckyou_extend_gentle = [] # 额外温柔词库
+    fuckyou_extend_violent = [] # 额外暴力词库
+    fuckyou_blacklist = [] # 黑名单(忽略这些用户
+    fuckyou_bl_to_wl = false # 黑名单反转白名单(仅对这些用户生效
+    fuckyou_block = false # 是否阻断 Matcher
 
 ## 🎉 使用
 
